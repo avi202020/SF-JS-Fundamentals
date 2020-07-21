@@ -50,8 +50,8 @@ describe("Primitives Exercise", function() {
       expect(result()).toEqual(10);
 
       // TEST for BONUS
-      // result = exercise5();
-      // expect(result()).toEqual(10);
+       result = exercise5(); // implies add to ten...
+       expect(result()).toEqual(20);
     });
   });
 });
