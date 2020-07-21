@@ -53,7 +53,9 @@ console.log("sum of numbers 1 to ten is " + [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].redu
 function printer(v) { console.log("Value is " + v);}
 endValues2.forEach(printer);
 
+let cl = console.log.bind(this);
 
+cl("---------------");
 [
     {name: "Fred", grade: 3.2}, 
     {name: "Jim", grade: 2.4},
@@ -62,5 +64,5 @@ endValues2.forEach(printer);
         .filter(p => p.grade > 3)
         .map(p => "Student called " + p.name + " has grade " + p.grade)
 //        .forEach(s => console.log(s));
-        .forEach(s => console.log(s));
+        .forEach(cl);
 
