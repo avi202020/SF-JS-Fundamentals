@@ -48,7 +48,9 @@ describe("Flow Control Exercises", function() {
     if (f([]) !== undefined) {
       return function() {
         it("Should correctly sum numbers", function() {
-          expect(f([1, 2, 3, 4])).toBe(10);
+          let anArray = [1, 2, 3, 4];
+          anArray[-99] = 100;
+          expect(f(anArray)).toBe(10);
           expect(f([8, 2, 6, 3])).toBe(19);
         });
       };

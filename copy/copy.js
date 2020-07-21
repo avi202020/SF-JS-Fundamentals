@@ -10,5 +10,16 @@
 function copy(object) {
 
   // Your code here.
-
+  let rv = {};
+  
+  for (let k in object) {
+      if (object.hasOwnProperty(k)) {
+//          Object.defineProperty(rv, k, {
+//              value: object[k],
+//                enumerable: true              
+//          });
+        rv[k] = object[k];
+      }
+  }
+  return rv;
 }
