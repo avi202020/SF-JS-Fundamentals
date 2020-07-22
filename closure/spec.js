@@ -35,4 +35,11 @@ describe("Closure Exercise", function() {
     expect(resultA.getTemp()).toBe(42);
     expect(resultB.getTemp()).toBe(43);
   });
+  
+    it("Should track temperature history", function() {
+    let result = closure();
+    result.setTemp(42);
+    result.setTemp(43);
+    expect(result.history()).toEqual([43, 42, 0]);
+  });
 });

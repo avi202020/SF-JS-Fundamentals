@@ -24,6 +24,23 @@
 //
 function closure() {
 
-  // Your code here.
+    // Your code here.
+    let history = [0];
+    return {
+        setTemp: function(v) {
+            if (v >= 0 && v <= 100) {
+                history.unshift(v);
+            }
+        },
+        getTemp: function() {
+            return history[0];
+        },
+        history: function() {
+            return history;
+        }
+    };
 
 }
+
+//let it = closure();
+//console.log(it.history);
