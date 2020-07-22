@@ -27,3 +27,28 @@
  *                // Stack is now empty.
  *   c.get();     // returns 20
  */
+
+function Calculator(v) {
+    this.value = (typeof v === 'undefined') ? 0 : v;
+    this.stack = [];
+}
+
+Calculator.prototype = {
+    push: function (v) {
+        this.stack.push(v);
+    },
+    mul: function () {
+        this.value *= this.stack.reduce((a, b) => a + b);
+        this.stack = [];
+    },
+    get: function() {
+        return this.value;
+    }
+};
+
+Calculator.prototype.add = function () {
+    this.value += this.stack.reduce((a, b) => a + b);
+    this.stack = [];
+};
+
+
