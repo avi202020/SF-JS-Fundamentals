@@ -5,12 +5,11 @@
 /****************************************************************************/
 // TEST DATA:
 let users = [
-  {id: 1, username: "caiva", age: 30},
-  {id: 2, username: "ahxae", age: 17},
-  {id: 3, username: "i4tie", age: 42},
-  {id: 4, username: "bvu7F", age: 19},
+    {id: 1, username: "caiva", age: 30},
+    {id: 2, username: "ahxae", age: 17},
+    {id: 3, username: "i4tie", age: 42},
+    {id: 4, username: "bvu7F", age: 19},
 ];
-
 /****************************************************************************/
 // EXERCISE 1:
 //
@@ -18,8 +17,8 @@ let users = [
 // DATA above that only includes users under the age of 18.
 function exercise1() {
 
-  // Your code here.
-
+    // Your code here.
+    return users.filter(u => u.age < 18);
 }
 
 /****************************************************************************/
@@ -30,8 +29,8 @@ function exercise1() {
 // same order.
 function exercise2() {
 
-  // Your code here.
-
+    // Your code here.
+    return users.map(u => u.username);
 }
 
 /****************************************************************************/
@@ -43,7 +42,8 @@ function exercise2() {
 // over the age of 20 and younger than 40.
 function exercise3() {
 
-  // Your code here.
+    // Your code here.
+    return users.filter(u => u.age > 20 && u.age < 40).map(u => u.id.toString());
 
 }
 
@@ -54,6 +54,11 @@ function exercise3() {
 // DATA) in reverse order.  Do not use the built-in reverse function.
 function exercise4() {
 
-  // Your code here.
-
+    // Your code here.
+    let rv = [];
+//    for (e of users) {
+//        rv.unshift(e);
+//    }
+    users.forEach(e => rv.unshift(e));
+    return rv;
 }
