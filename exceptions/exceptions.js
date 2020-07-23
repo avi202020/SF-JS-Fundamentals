@@ -11,3 +11,10 @@
  *    If the argument to the check function is even, return true.  If
  *    it is odd, throw an OddNumberError exception.
  */
+
+class OddNumberError extends Error{ };
+
+function check(x) {
+    if (x % 2 === 0) return true;
+    throw new OddNumberError();
+}

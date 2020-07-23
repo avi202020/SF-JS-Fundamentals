@@ -65,3 +65,38 @@
  */
 
 // Your code here.
+let theBucketDiv = document.querySelector("#bucket");
+let theBucket = theBucketDiv.querySelector("ul");
+
+let flagOne = document.querySelector("li.foo");
+let flagOneParent = flagOne.parentNode;
+
+flagOneParent.removeChild(flagOne);
+let flagOneListItem = document.createElement("li");
+flagOneListItem.appendChild(flagOne);
+theBucket.appendChild(flagOneListItem);
+
+let theArticle = document.querySelector("#articles article");
+let articleChildren = theArticle.children;
+let thePara = articleChildren[2];
+let theSpan = thePara.querySelector("span");
+let theSpanParent = theSpan.parentNode;
+theSpanParent.removeChild(theSpan);
+theBucket.appendChild(theSpan);
+
+let f3 = document.querySelector("div.footer div div div div");
+let f3Parent = f3.parentNode;
+f3Parent.removeChild(f3);
+theBucket.appendChild(f3);
+
+let articleThree = document.querySelector("#article-3")
+let a3Children = articleThree.children;
+let para5 = a3Children[3];
+let span4 = para5.querySelector("span");
+para5.removeChild(span4);
+theBucket.appendChild(span4);
+
+articleThree.removeChild(para5);
+theBucket.appendChild(para5);
+
+

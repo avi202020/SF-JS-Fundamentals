@@ -28,27 +28,49 @@
  *   c.get();     // returns 20
  */
 
-function Calculator(v) {
-    this.value = (typeof v === 'undefined') ? 0 : v;
-    this.stack = [];
-}
+//function Calculator(v) {
+//    this.value = (typeof v === 'undefined') ? 0 : v;
+//    this.stack = [];
+//}
+//
+//Calculator.prototype = {
+//    push: function (v) {
+//        this.stack.push(v);
+//    },
+//    mul: function () {
+//        this.value *= this.stack.reduce((a, b) => a + b);
+//        this.stack = [];
+//    },
+//    get: function() {
+//        return this.value;
+//    }
+//};
+//
+//Calculator.prototype.add = function () {
+//    this.value += this.stack.reduce((a, b) => a + b);
+//    this.stack = [];
+//};
 
-Calculator.prototype = {
-    push: function (v) {
+class Calculator {
+    constructor(v) {
+        console.log("Running constructor in class");
+        this.value = (typeof v === 'undefined') ? 0 : v;
+        this.stack = [];
+    }
+    push(v) {
         this.stack.push(v);
-    },
-    mul: function () {
+    }
+    mul() {
         this.value *= this.stack.reduce((a, b) => a + b);
         this.stack = [];
-    },
-    get: function() {
+    }
+    get() {
         return this.value;
     }
-};
-
-Calculator.prototype.add = function () {
-    this.value += this.stack.reduce((a, b) => a + b);
-    this.stack = [];
-};
+    add() {
+        this.value += this.stack.reduce((a, b) => a + b);
+        this.stack = [];
+    }
+}
 
 

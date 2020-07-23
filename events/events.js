@@ -13,3 +13,21 @@
 
 
 // Your code here.
+
+let buttons = document.querySelectorAll(".button");
+
+function handler(e) {
+    let target = e.target;
+    let container = target.nextElementSibling;
+    let count = container.innerHTML;
+    count = + count;
+    count++;
+    container.innerHTML = "" + count;
+    e.preventDefault();
+}
+
+for (let b of buttons) {
+    b.addEventListener('click', handler);
+}
+
+console.log("completed setup");
